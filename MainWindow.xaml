@@ -1,0 +1,39 @@
+﻿<Window x:Class="Vitta_Testing_Task.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vitta_Testing_Task"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="474.523" Width="786.151">
+    <Grid>
+        <Menu x:Name="Menu" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="830">
+            <MenuItem x:Name="menuItemConnect" Header="Подключиться" Click="menuItemConnect_Click"/>
+            <MenuItem x:Name="menuItemView" Header="Отобразить">
+                <MenuItem x:Name="menuItemOrders" Header="Заказы" Click="menuItemOrders_Click"/>
+                <MenuItem x:Name="menuItemPayment" Header="История транзакций" Click="menuItemPayment_Click"/>
+            </MenuItem>
+        </Menu>
+        <Label x:Name="label1" Content="" HorizontalAlignment="Left" Height="23" Margin="0,411,0,0" VerticalAlignment="Top"/>
+        <ListView x:Name="listView1" HorizontalAlignment="Left" Height="389" Margin="0,22,0,0" VerticalAlignment="Top" Width="778" SelectionChanged="listView1_SelectionChanged">
+            <ListView.View>
+                <GridView x:Name="gridView1">
+                    <GridViewColumn x:Name="idColumn" Header="Номер заказа" Width="120" DisplayMemberBinding="{Binding Path=id}"/>
+                    <GridViewColumn x:Name="dateColumn" Header="Дата" Width="150" DisplayMemberBinding="{Binding Path=date}"/>
+                    <GridViewColumn x:Name="sumColumn" Header="Сумма" Width="200" DisplayMemberBinding="{Binding Path=sum}"/>
+                    <GridViewColumn x:Name="toPaymentColumn" Header="Сумма к оплате" Width="200" DisplayMemberBinding="{Binding Path=toPayment}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="buttonPay" Content="Оплатить" HorizontalAlignment="Left" Margin="664,414,0,0" VerticalAlignment="Top" Width="104" Click="buttonPay_Click" IsEnabled="False"/>
+        <ListView x:Name="listView2" HorizontalAlignment="Left" Height="389" Margin="0,22,0,0" VerticalAlignment="Top" Width="778">
+            <ListView.View>
+                <GridView x:Name="gridView2">
+                    <GridViewColumn x:Name="idColumn1" Header="Номер списания денежных средств" Width="200" DisplayMemberBinding="{Binding moneyId}"/>
+                    <GridViewColumn x:Name="dateColumn1" Header="Номер заказа" Width="200" DisplayMemberBinding="{Binding orderId}"/>
+                    <GridViewColumn x:Name="sumColumn1" Header="Сумма" Width="300" DisplayMemberBinding="{Binding sum}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

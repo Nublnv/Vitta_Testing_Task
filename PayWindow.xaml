@@ -1,0 +1,17 @@
+﻿<Window x:Name="payWindow" x:Class="Vitta_Testing_Task.PayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vitta_Testing_Task"
+        mc:Ignorable="d"
+        Title="Окно оплаты" Height="274.18" Width="501.23">
+    <Grid>
+        <Slider x:Name="sliderValue" HorizontalAlignment="Left" Height="27" Margin="37,103,0,0" VerticalAlignment="Top" Width="268" ValueChanged="Slider_ValueChanged" SmallChange="0.01" IsEnabled="False"/>
+        <Label Content="Введите сумму оплаты:" HorizontalAlignment="Left" Margin="37,72,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxValue" HorizontalAlignment="Left" Height="27" Margin="310,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" PreviewTextInput="textBoxValue_PreviewTextInput"/>
+        <Button x:Name="buttonOK" Content="OK" HorizontalAlignment="Left" Height="32" Margin="193,176,0,0" VerticalAlignment="Top" Width="89" Click="buttonOK_Click"/>
+        <Label x:Name="labelMax" Content="Максимум:" HorizontalAlignment="Left" Margin="37,130,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
