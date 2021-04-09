@@ -23,7 +23,7 @@ namespace Vitta_Testing_Task
         {
             InitializeComponent();
             textBoxValue.Text = sliderValue.Value.ToString();
-            sliderValue.Maximum = Math.Max((double)toPayment, (double)amount);
+            sliderValue.Maximum = Math.Min((double)toPayment, (double)amount);
             sliderValue.IsEnabled = true;
             labelMax.Content +=" " + amount.ToString();
         }

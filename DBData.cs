@@ -46,7 +46,7 @@ namespace Vitta_Testing_Task
 
         public static void Pay(SqlConnection sqlConnection, Order order, decimal value)
         {
-            string queryString = "BEGIN TRANSACTION DECLARE @TOPAY MONEY; UPDATE dbo.Orders SET toPayment = toPayment - 1000 WHERE orderId = 2; IF(@@ERROR <> 0) ROLLBACK IF(@TOPAY < 0) ROLLBACK COMMIT TRANSACTION";
+            string queryString = "BEGIN TRANSACTION DECLARE @TOPAY MONEY; UPDATE dbo.Orders SET toPayment = toPayment - "+ value +" WHERE orderId = "+ order.id + "; IF(@@ERROR <> 0) ROLLBACK IF(@TOPAY < 0) ROLLBACK COMMIT TRANSACTION";
             SqlCommand sqlCommand = new SqlCommand(queryString, sqlConnection);
             try
             {
